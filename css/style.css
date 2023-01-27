@@ -1,0 +1,77 @@
+/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
+    /* some basic css resetting */
+body { margin: 0; box-sizing: border-box; }
+a { text-decoration: none; color:black; }
+
+
+/* ==========HEADER============= */
+/* ==========LOGO============= */
+/* ==========NAVIGATION============= */
+
+
+/* ==========MAIN BODY CONTENT============= */
+
+
+/* ==========SECTION 1 STYLING============= */
+
+/* ==========SECTION 2 STYLING============= */
+
+/* ==========SECTION 3 STYLING============= */
+
+/* ==========SECTION 4 STYLING============= */
+
+
+/* ==========FOOTER STYLIING============= */
+
+
+
+
+/* ==========RESPONSIVE DESIGN============= */
+
+/* ===== 5K RETINA MAC LABS: Media queries for Curtin Uni mac lab testing only ===== */
+@media only screen and (max-width: 5120px) {
+
+        
+}
+
+/* ===== DESKTOP HD: Media queries for most HD desktops ===== */
+@media only screen and (max-width: 1920px) {
+   
+    
+    
+}
+
+/* ===== SMALL DESKTOP: Media queries for laptop/small desktop ===== */
+@media only screen and (max-width: 1366px) { 
+
+      
+    
+}
+
+/* ===== TABLET: Media queries for verticle and horizontal ===== */
+@media only screen and (max-width: 1024px) { 
+
+      
+    
+}
+
+@media only screen and (max-width: 768px) { 
+
+    
+        
+}
+
+/* ===== MOBILE: Media queries for small mobile resolution. ===== */
+@media only screen and (max-width: 640px) { 
+
+    
+        
+}
+
+
+@media only screen and (max-width: 360px) { 
+
+            
+        
+}
+
