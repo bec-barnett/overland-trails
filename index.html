@@ -35,17 +35,31 @@
         <div id="fullpage">
             <div class="section">
                 <div class="section">
-                    <div class="slide"> Slide 1 
-                        <sl-button>Click me</sl-button>
+                    <div class="slide">
+                        <!-- The video -->
+                        <div id="videoWrapper">
+                            <video autoplay muted id="heroVideo">
+                                <!-- Video Stock footage provided by Videvo, downloaded from videvo.net -->
+                                <source src="./media/biking.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <img src="./images/videoBackground.jpg" alt="Epic Snowy Mountains" id="heroImage">
+                        <!-- <img src="./images/michal-kmet-M9O6GRrEEDY-unsplash.jpg" alt="Epic Snowy Mountains" id="heroImage"> -->
+                        <!-- Optional: some overlay text to describe the video -->
+                        <div class="content">
+                            <!-- Use a button to pause/play the video with JavaScript -->
+                            <button id="myBtn" onclick="myFunction()">Pause</button>
+                        </div>
+                        <!-- <sl-button>Click me</sl-button> -->
                     </div>
                     <div class="slide"> Slide 2 </div>
                     <div class="slide"> Slide 3 </div>
                     <div class="slide"> Slide 4 </div>
                 </div>
             </div>
-            <div class="section">Some section</div>
-            <div class="section">Some section</div>
-            <div class="section">Some section</div>
+            <!-- <div class="section">Some section</div> -->
+            <!-- <div class="section">Some section</div> -->
+            <!-- <div class="section">Some section</div> -->
         </div>
 
        
@@ -65,7 +79,7 @@
 
         
         <!--FOOTER-->
-        <footer><!--Credits, Copyright Ect.-->
+        <!-- <footer><!--Credits, Copyright Ect.
             <p>
                 Created by Rebecca Barnett 2022
             </p>
@@ -76,7 +90,7 @@
                 Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without
                 consent of the original copyright owners. See code comments for references.
             </p>
-        </footer>
+        </footer> -->
         <!--CONTACT FORM OR TEXT-->
         <!--SOCIAL MEDIA ?-->
 

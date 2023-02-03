@@ -1,6 +1,11 @@
 /* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
     /* some basic css resetting */
-body { margin: 0; box-sizing: border-box; }
+body {
+    margin: 0; 
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+}
 a { text-decoration: none; color:black; }
 
 
@@ -10,6 +15,66 @@ a { text-decoration: none; color:black; }
 
 
 /* ==========MAIN BODY CONTENT============= */
+/** Full screen Video 
+ * ref: W3 Schools. How To Create a Fullscreen Video
+ * src: https://www.w3schools.com/howto/howto_css_fullscreen_video.asp
+*/
+
+/* Style the video: 100% width and height to cover the entire window */
+
+#videoWrapper {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#heroVideo {
+    position: sticky;
+    right: 0;
+    bottom: 0;
+    object-fit: fill;
+    max-height: 100vh;
+    min-width: 100vw;
+  }
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    height: 100%;
+    /* padding: 20px; */
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  /* Hero image that is faded in when video finishes playing. */
+  #heroImage {
+    position: absolute;
+    top: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+  }
+
 
 
 /* ==========SECTION 1 STYLING============= */
@@ -74,4 +139,5 @@ a { text-decoration: none; color:black; }
             
         
 }
+
 
