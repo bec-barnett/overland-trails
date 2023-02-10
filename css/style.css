@@ -1,18 +1,62 @@
 /* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
-    /* some basic css resetting */
+/* some basic css resetting */
 body {
-    margin: 0; 
-    box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
 }
-a { text-decoration: none; color:black; }
+
+a {
+  text-decoration: none;
+  color: black;
+}
 
 
 /* ==========HEADER============= */
+header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 200px;
+  z-index: 1;
+}
 /* ==========LOGO============= */
 /* ==========NAVIGATION============= */
+/* Add some content at the bottom of the video/page */
+#sideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  background: #11190a9c;
+  height: 100%;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
+#sideBar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+#sideBar a:hover {
+  color: #f1f1f1;
+}
+
+#sideBar .menuBtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
 /* ==========MAIN BODY CONTENT============= */
 /** Full screen Video 
@@ -23,66 +67,63 @@ a { text-decoration: none; color:black; }
 /* Style the video: 100% width and height to cover the entire window */
 
 #videoWrapper {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
 }
 
 #heroVideo {
-    position: sticky;
-    right: 0;
-    bottom: 0;
-    object-fit: fill;
-    max-height: 100vh;
-    min-width: 100vw;
-  }
-  
-  /* Add some content at the bottom of the video/page */
-  .content {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    height: 100%;
-    z-index: 3;
-    /* padding: 20px; */
-  }
-  
-  /* Style the button used to pause/play the video */
-  #myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  #myBtn:hover {
-    background: #ddd;
-    color: black;
-  }
+  position: sticky;
+  right: 0;
+  bottom: 0;
+  object-fit: fill;
+  max-height: 100vh;
+  min-width: 100vw;
+  z-index: 1;
+}
 
-  /* Hero image that is faded in when video finishes playing. */
-  #heroImage {
-    position: absolute;
-    top: 0;
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-  }
-  
-  h1{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
+/* Style the buttons used to pause/play the video */
+sl-button.pauseBtn::part(base) {
+  /* padding: 10px; */
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+sl-button.pauseBtn::part(base):hover {
+  background: rgba(221, 221, 221, 0.144);
+}
+
+sl-button#btmPauseBtn {
+  position: absolute;
+  background-color: #8181813f;
+  right: 20px;
+  top: 20px;
+  width: 50px;;
+  height: 50px;
+  z-index: 1;
+}
+
+
+
+#home {
+  /* Background Image from Unspalsh - Michal Kmet */
+  background-image: url("../images/wider_michal-kmet-M9O6GRrEEDY-unsplash.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 
 
@@ -103,50 +144,21 @@ a { text-decoration: none; color:black; }
 /* ==========RESPONSIVE DESIGN============= */
 
 /* ===== 5K RETINA MAC LABS: Media queries for Curtin Uni mac lab testing only ===== */
-@media only screen and (max-width: 5120px) {
-
-        
-}
+@media only screen and (max-width: 5120px) {}
 
 /* ===== DESKTOP HD: Media queries for most HD desktops ===== */
-@media only screen and (max-width: 1920px) {
-   
-    
-    
-}
+@media only screen and (max-width: 1920px) {}
 
 /* ===== SMALL DESKTOP: Media queries for laptop/small desktop ===== */
-@media only screen and (max-width: 1366px) { 
-
-      
-    
-}
+@media only screen and (max-width: 1366px) {}
 
 /* ===== TABLET: Media queries for verticle and horizontal ===== */
-@media only screen and (max-width: 1024px) { 
+@media only screen and (max-width: 1024px) {}
 
-      
-    
-}
-
-@media only screen and (max-width: 768px) { 
-
-    
-        
-}
+@media only screen and (max-width: 768px) {}
 
 /* ===== MOBILE: Media queries for small mobile resolution. ===== */
-@media only screen and (max-width: 640px) { 
-
-    
-        
-}
+@media only screen and (max-width: 640px) {}
 
 
-@media only screen and (max-width: 360px) { 
-
-            
-        
-}
-
-
+@media only screen and (max-width: 360px) {}

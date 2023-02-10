@@ -14,6 +14,22 @@ var myFullpage = new fullpage('#fullpage', {
   scrollingSpeed: 1500,
 });
 
+/**
+ * Function to open the sideNav
+ * Source: https://www.w3schools.com/howto/howto_js_sidenav.asp
+*/
+function openNav() {
+  document.getElementById("sideBar").style.width = "20%";
+}
+
+/**
+ * Function to close the sideNav
+ * Source: https://www.w3schools.com/howto/howto_js_sidenav.asp
+*/
+function closeNav() {
+  document.getElementById("sideBar").style.width = "0";
+}
+
 
 /** Full screen Video 
  * ref: W3 Schools. How To Create a Fullscreen Video
@@ -22,68 +38,74 @@ var myFullpage = new fullpage('#fullpage', {
 
 // Get the video
 var video = document.getElementById("heroVideo");
-var heroImage = document.getElementById('heroImage');
 var videoWrapper = document.getElementById('videoWrapper');
 video.addEventListener('ended', videoFinished, false);
 
-// Get the button
-var btn = document.getElementById("myBtn");
-btn.addEventListener('click', pauseStartVideo);
+// Get the pause buttons
+var navPauseBtn = document.getElementById("navPauseBtn");
+var btmPauseBtn = document.getElementById("btmPauseBtn");
+navPauseBtn.addEventListener('click', restartVideo);
+btmPauseBtn.addEventListener('click', pauseStartVideo);
 
 // Pause and play the video, and change the button text
 function pauseStartVideo() {
   if (video.paused) {
-    heroImage.style.opacity = 0;
     videoWrapper.style.opacity = 1;
-    video.style.filter = "alpha(opacity=100)";
-    video.play();
-    btn.innerHTML = "Pause";
+    playVideo();
   } else {
     videoWrapper.style.opacity = 0;
-    heroImage.style.opacity = 1;
-    video.pause();
-    btn.innerHTML = "Play";
+    pauseVideo();
   }
+}
+
+
+/**
+ * Video to pause the home page video and reset the play button
+ */
+function pauseVideo() {
+  video.pause();
+}
+
+/**
+ * Video to play the home page video and reset the play button
+ */
+function playVideo() {
+  if (video.style.display == "none") {
+    // If video was finished reload the page to restart the video
+    video.style.display = "inline";
+    videoWrapper.opacity = 1;
+    
+  }
+  video.play();
+}
+
+function restartVideo() {
+  window.location.href = window.location.href + "/"; 
 }
 
 // If the video is stopped due to the user or a click on the page, remove the video
-// and replace with heroImage
-function videoFinished(e) {
-  if (currentPage == 1) {
-    fade(videoWrapper);
-    unfade(heroImage);
-    btn.innerHTML = "Play";
-  }
+function videoFinished() {
+  btmPauseBtn.style.display = "none";
+  navPauseBtn.innerHTML = "Play";
+  fade(videoWrapper);
 }
 
 
-/** Fading and Fading out Elements Functions
+/** Fading Elements Function
  * ref: StackOverflow, user "Ubu"
  * src: https://stackoverflow.com/a/6121270
  * */
-function unfade(element) {
-  var op = 0.1;  // initial opacity
-  element.style.display = 'inline';
-  var timer = setInterval(function () {
-    if (op >= 1) {
-      clearInterval(timer);
-    }
-    element.style.opacity = op;
-    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-    op += op * 0.01;
-  }, 10);
-}
-
 function fade(element) {
-  var op = 1;  // initial opacity
-  // element.style.display = 'inline';
+  var opacity = 1;  // initial opacity
+  // if (fullpage_api.getActiveSlide().anchor != "home") opacity = 0;
   var timer = setInterval(function () {
-    if (op <= 0) {
+    if (opacity <= 0.01) {
+      element.style.opacity = 0;
+      video.style.display = "none";
       clearInterval(timer);
     }
-    element.style.opacity = op;
-    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-    op -= op * 0.01;
+    element.style.opacity = opacity;
+    opacity -= opacity * 0.01;
   }, 10);
 }
 
@@ -103,22 +125,13 @@ function scrollPages(delta) {
     if (anchor == fullpage_api.getActiveSlide().anchor) currentPage = index; // Use fullpage's API to get the current active "slide" div
   });
 
-  if (currentPage == 0) pauseVideo(); // If we are on the first page make sure we pause our video and reset the Play button
-  
+  if (currentPage == 0) videoWrapper.style.display = "none";
+
   var anchorIndex = currentPage + direction; // Get the index of the page anchor we want to move to
-  
-  
-  if (anchorIndex == 0) {
-    window.location.href = ""; // If its back to the home page (index 0), simply redirect to home
-  } else if (anchorIndex > 0 && anchorIndex < pageAnchors.length) {
+
+  if (anchorIndex >= 0 && anchorIndex < pageAnchors.length) {
     window.location.href = "#main/" + pageAnchors[anchorIndex]; // redirect user to the new anchor
   }
+  // videoFinished(0); // make sure video stops 
 }
 
-/**
- * Video to pause the home page video and reset the play button
- */ 
-function pauseVideo() {
-  video.pause();
-  btn.innerHTML = "Play";
-}

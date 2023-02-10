@@ -1,94 +1,104 @@
 <!doctype html>
 <html lang="en">
-    <head> 
-        <meta charset="utf-8">     
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Overland Trails Mountain Biking Packages</title> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="author" content="Rebecca Barnett">
-        <meta name="description" content="Overland Trails - Tasmanian Mountain Biking Adventures">
-        <meta name="keywords" content="Mountain,Biking,Tasmania,Packages,Holidays,Vacation,North,West,Bike,Biking,Affordable,Accomodation,Camping,Meals,Summer">
+    <title>Overland Trails Mountain Biking Packages</title>
 
-        <link rel="stylesheet" href="css/style.css">         
-        <link rel="icon" href="place-your-tab-icon-here.jpg">
-        
-        <!--FullPage JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.js" integrity="sha512-rNf09cQHIWzD8BU37lIb3rInygeWXW2hVqJ7niVtTPXWuVR3aFiph1eFIeDiEQV8J45u0qfp7ng8I3TzJHY4Eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.css" integrity="sha512-joJLRX4chQYCQlk0R4FXEgZHqsWA1hf4e+C+QKyi8fnfDm8FlEsNAVo+ByQhD19BrgVZGSOJKAQZa5M5gXDtpQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-        <!--Shoelace-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css" />
-        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
-        
-        
-                
-    </head>
-    <body>
-        
+    <meta name="author" content="Rebecca Barnett">
+    <meta name="description" content="Overland Trails - Tasmanian Mountain Biking Adventures">
+    <meta name="keywords"
+        content="Mountain,Biking,Tasmania,Packages,Holidays,Vacation,North,West,Bike,Biking,Affordable,Accomodation,Camping,Meals,Summer">
 
-        <!--HEADER-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="place-your-tab-icon-here.jpg">
+
+    <!--FullPage JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.js"
+        integrity="sha512-rNf09cQHIWzD8BU37lIb3rInygeWXW2hVqJ7niVtTPXWuVR3aFiph1eFIeDiEQV8J45u0qfp7ng8I3TzJHY4Eg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.css"
+        integrity="sha512-joJLRX4chQYCQlk0R4FXEgZHqsWA1hf4e+C+QKyi8fnfDm8FlEsNAVo+ByQhD19BrgVZGSOJKAQZa5M5gXDtpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Shoelace-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <header>
         <!--LOGO-->
-        <!--NAVIGATION-->
-        <div class="content">
-            <!-- Use a button to pause/play the video with JavaScript -->
-            <button id="myBtn" onclick="myFunction()">Pause</button>
-            <nav id="menu">
-                <ul id="menu-nav">
-                    <li data-menuanchor="home" class="current"><a href="#home">Home</a></li>
-                    <li data-menuanchor="about"><a href="#about">About</a></li>
-                    <li data-menuanchor="packages"><a href="#packages">Packages</a></li>
-                    <li data-menuanchor="timeline"><a href="#timeline">Timeline</a></li>
-                    <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-         </div>
+        <sl-button onclick="openNav()">&#9776;</sl-button>
+    </header>
 
-        <!--MAIN CONTENT-->
-        <div id="fullpage">
-                <div class="section" data-anchor="main">
-                    <div class="slide" data-anchor="home">
-                        <!-- The video -->
-                        <div id="videoWrapper">
-                            <video autoplay muted id="heroVideo">
-                                <!-- Video Stock footage provided by Videvo, downloaded from videvo.net -->
-                                <source src="./media/biking.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <img src="./images/videoBackground.jpg" alt="Epic Snowy Mountains" id="heroImage">
-                        <!-- <img src="./images/michal-kmet-M9O6GRrEEDY-unsplash.jpg" alt="Epic Snowy Mountains" id="heroImage"> -->
-                        <!-- Optional: some overlay text to describe the video -->
-                        
-                        <!-- <sl-button>Click me</sl-button> -->
-                    </div>
-                    <div class="slide" id="about" data-anchor="about"> <h1>Slide 1 </h1> </div>
-                    <div class="slide" id="packages" data-anchor="packages"> <h1>Slide 2 </h1> </div>
-                    <div class="slide" id="timeline" data-anchor="timeline">  <h1>Slide 3 </h1> </div>
-                    <div class="slide" id="contact" data-anchor="contact"> <h1>Slide 4 </h1> </div>
+    <!--NAVIGATION-->
+    <div id="sideBar">
+        <nav id="menu">
+            <ul id="menu-nav">
+                <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+                <li data-menuanchor="home" class="current"><a href="#home">Home</a></li>
+                <li data-menuanchor="about"><a href="#about">About</a></li>
+                <li data-menuanchor="packages"><a href="#packages">Packages</a></li>
+                <li data-menuanchor="timeline"><a href="#timeline">Timeline</a></li>
+                <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Use a button to pause/play the video with JavaScript -->
+        <sl-button id="navPauseBtn" class="pauseBtn" variant="text" size="large">Rewatch Introduction</sl-button>
+    </div>
+
+
+    <!--MAIN CONTENT-->
+    <div id="fullpage">
+        <div class="section" data-anchor="main">
+            <div class="slide" id="home" data-anchor="home">
+                <!--SECTION 1-->
+
+                <!-- The video -->
+                <div id="videoWrapper">
+                    <video autoplay muted id="heroVideo">
+                        <!-- Video Stock footage provided by Videvo, downloaded from videvo.net -->
+                        <source src="./media/biking.mp4" type="video/mp4">
+                    </video>
+                    <!-- Use a button to pause/play the video with JavaScript -->
+                    <sl-button id="btmPauseBtn" class="pauseBtn">II</sl-button>
                 </div>
-            <!-- <div class="section">Some section</div> -->
-            <!-- <div class="section">Some section</div> -->
-            <!-- <div class="section">Some section</div> -->
+
+            </div>
+            <div class="slide" id="about" data-anchor="about">
+                <!--SECTION 2-->
+                <h1>Slide 1 </h1>
+            </div>
+            <div class="slide" id="packages" data-anchor="packages">
+                <!--SECTION 3-->
+
+                <h1>Slide 2 </h1>
+            </div>
+            <div class="slide" id="timeline" data-anchor="timeline">
+                <!--SECTION 4-->
+
+                <h1>Slide 3 </h1>
+            </div>
+            <div class="slide" id="contact" data-anchor="contact">
+                <!--SECTION 5-->
+
+                <h1>Slide 4 </h1>
+            </div>
         </div>
+    </div>
+    <!--MAIN CONTENT ENDS-->
 
-       
-            <!--SECTION 1-->
-                
 
-            <!--SECTION 2-->
-               
-
-            <!--SECTION 3-->
-            
-
-            <!--SECTION 4-->
-            
-
-        <!--MAIN CONTENT ENDS-->
-
-        
-        <!--FOOTER-->
-        <!-- <footer><!--Credits, Copyright Ect.
+    <!--FOOTER-->
+    <!-- <footer><!--Credits, Copyright Ect.
             <p>
                 Created by Rebecca Barnett 2022
             </p>
@@ -100,10 +110,11 @@
                 consent of the original copyright owners. See code comments for references.
             </p>
         </footer> -->
-        <!--CONTACT FORM OR TEXT-->
-        <!--SOCIAL MEDIA ?-->
+    <!--CONTACT FORM OR TEXT-->
+    <!--SOCIAL MEDIA ?-->
 
     <!--Custom JS-->
     <script src="js/script.js"></script>
-    </body> 
+</body>
+
 </html>
