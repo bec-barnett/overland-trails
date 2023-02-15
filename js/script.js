@@ -20,6 +20,8 @@ var myFullpage = new fullpage('#fullpage', {
 */
 function openNav() {
   document.getElementById("sideBar").style.width = "20%";
+  document.getElementById("openNavBtn").style.display = "none";
+  document.getElementById("closeNavBtn").style.display = "inline";
 }
 
 /**
@@ -28,6 +30,8 @@ function openNav() {
 */
 function closeNav() {
   document.getElementById("sideBar").style.width = "0";
+  document.getElementById("closeNavBtn").style.display = "none";
+  document.getElementById("openNavBtn").style.display = "inline";
 }
 
 
@@ -80,13 +84,12 @@ function playVideo() {
 }
 
 function restartVideo() {
-  window.location.href = window.location.href + "/"; 
+  window.location.href = "";
 }
 
 // If the video is stopped due to the user or a click on the page, remove the video
 function videoFinished() {
   btmPauseBtn.style.display = "none";
-  navPauseBtn.innerHTML = "Play";
   fade(videoWrapper);
 }
 
@@ -129,9 +132,18 @@ function scrollPages(delta) {
 
   var anchorIndex = currentPage + direction; // Get the index of the page anchor we want to move to
 
-  if (anchorIndex >= 0 && anchorIndex < pageAnchors.length) {
+  if (anchorIndex == 0) {
+    window.location.href = "" // Redirect to 'Home' without applying the anchor tag
+  } else if (anchorIndex >= 0 && anchorIndex < pageAnchors.length) {
     window.location.href = "#main/" + pageAnchors[anchorIndex]; // redirect user to the new anchor
   }
-  // videoFinished(0); // make sure video stops 
+}
+
+/**
+ * Function to redirect user to the home page
+ * without applying an anchor tag to the URL
+ */
+function redirectHome(){
+  window.location.href = "";
 }
 

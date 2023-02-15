@@ -58,6 +58,19 @@ header {
   margin-left: 50px;
 }
 
+sl-button.hamburgerMenuIcon::part(base) {
+  position: fixed;
+  background-color: transparent;
+  font-size: 50px;
+  left: 20px;
+  top: 20px;
+  width: 50px;;
+  height: 50px;
+  z-index: 10;
+  border: none;
+  color: #ffffff;
+}
+
 /* ==========MAIN BODY CONTENT============= */
 /** Full screen Video 
  * ref: W3 Schools. How To Create a Fullscreen Video
@@ -98,13 +111,13 @@ sl-button.pauseBtn::part(base):hover {
 }
 
 sl-button#btmPauseBtn {
-  position: absolute;
-  background-color: #8181813f;
-  right: 20px;
-  top: 20px;
+  position: fixed;
+  background-color: #818181b4;
+  right: 120px;
+  top: 30px;
   width: 50px;;
   height: 50px;
-  z-index: 1;
+  z-index: 10;
 }
 
 
@@ -128,6 +141,13 @@ h1 {
 
 
 /* ==========SECTION 1 STYLING============= */
+#navPauseBtn {
+  position: fixed;
+  background-color: #818181b4;
+  right: 20px;
+  top: 30px;
+  z-index: 10;
+}
 
 /* ==========SECTION 2 STYLING============= */
 
