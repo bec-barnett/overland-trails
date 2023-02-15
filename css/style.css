@@ -1,10 +1,16 @@
 /* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
 /* some basic css resetting */
+@font-face {
+  font-family: Vrinda;
+  src: url(../fonts/vrinda.ttf);
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
+  font-family: Vrinda;
 }
 
 a {
@@ -29,7 +35,7 @@ header {
   left: 0;
   top: 0;
   width: 0;
-  background: #11190a9c;
+  background: #50702d80;
   height: 100%;
   z-index: 3;
   overflow-x: hidden;
@@ -40,14 +46,14 @@ header {
 #sideBar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 40px;
+  color: #f1f1f1;
   display: block;
   transition: 0.3s;
 }
 
 #sideBar a:hover {
-  color: #f1f1f1;
+  color: #9b9898;
 }
 
 #sideBar .menuBtn {
@@ -70,6 +76,13 @@ sl-button.hamburgerMenuIcon::part(base) {
   border: none;
   color: #ffffff;
 }
+
+#menu-nav {
+  list-style: none;
+  font-family: Vrinda;
+  margin-top: 100px;
+}
+
 
 /* ==========MAIN BODY CONTENT============= */
 /** Full screen Video 
