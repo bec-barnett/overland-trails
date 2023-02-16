@@ -1,6 +1,7 @@
+
 // Add event listener for mousewheel 
 window.addEventListener('mousewheel', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   scrollPages(e.wheelDelta); // handle mousewheel event
 });
 
@@ -11,7 +12,12 @@ var myFullpage = new fullpage('#fullpage', {
   loopHorizontal: false,
   anchors: ['home', 'packages', 'timeline', 'contact'],
   menu: '#menu-nav',
-  scrollingSpeed: 1500,
+  scrollingSpeed: 2500,
+});
+
+const scroller = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
 });
 
 /**
@@ -19,7 +25,12 @@ var myFullpage = new fullpage('#fullpage', {
  * Source: https://www.w3schools.com/howto/howto_js_sidenav.asp
 */
 function openNav() {
-  document.getElementById("sideBar").style.width = "20%";
+  var size = window.matchMedia("(max-width: 768px)")
+  if (size.matches) { // If media query matches
+    document.getElementById("sideBar").style.width = "100%";
+  } else {
+    document.getElementById("sideBar").style.width = "20%";
+  }
   document.getElementById("openNavBtn").style.display = "none";
   document.getElementById("closeNavBtn").style.display = "inline";
 }

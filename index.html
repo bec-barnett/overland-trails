@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
 
+    <!-- Locomotive Scroll -->
+    <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    
+
 
 
 </head>
@@ -36,7 +41,9 @@
     <!--HEADER-->
     <header>
         <!--LOGO-->
+        <a href="javascript:redirectHome()"><img src="./images/logo.png" alt="Overland Trails Logo" id="siteLogo"></a>
         <sl-button onclick="openNav()" class="hamburgerMenuIcon"  id="openNavBtn" variant="text" size="large">&#9776;</sl-button>
+
     </header>
 
     <!--NAVIGATION-->
@@ -57,42 +64,47 @@
 
     <!--MAIN CONTENT-->
     <div id="fullpage">
-        <div class="section" data-anchor="main">
-            <div class="slide" id="home" data-anchor="home">
+        <div class="section" data-anchor="main"  data-scroll-container>
+            <div class="slide" id="home" data-anchor="home" data-scroll-section>
                 <!-- Use a button to pause/play the video with JavaScript -->
                 <sl-button id="navPauseBtn" class="pauseBtn" variant="text" size="large">Replay</sl-button>
                 <!--SECTION 1-->
-
+                <h1 data-scroll data-scroll-speed="1">Adventure Starts Here</h1>
+                <p data-scroll data-scroll-speed="-6">Explore and Book Packages </p>
                 <!-- The video -->
                 <div id="videoWrapper">
+                    <h1 data-scroll data-scroll-speed="1">Adventure Starts Here</h1>
+                    <p data-scroll data-scroll-speed="-6">Explore and Book Packages </p>
                     <video autoplay muted id="heroVideo">
                         <!-- Video Stock footage provided by Videvo, downloaded from videvo.net -->
                         <source src="./media/biking.mp4" type="video/mp4">
                     </video>
-                    <!-- Use a button to pause/play the video with JavaScript -->
                     
+                    <!-- Use a button to pause/play the video with JavaScript -->
                 </div>
                 <sl-button id="btmPauseBtn" class="pauseBtn" variant="text" size="large">II</sl-button>
+
+                
                 
             </div>
-            <div class="slide" id="about" data-anchor="about">
+            <div class="slide" id="about" data-anchor="about" data-scroll-section>
                 <!--SECTION 2-->
-                <h1>Slide 1 </h1>
+                <h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-3" data-scroll-class="appear" data-scroll-repeat="true">Slide 1 </h1>
             </div>
-            <div class="slide" id="packages" data-anchor="packages">
+            <div class="slide" id="packages" data-anchor="packages" data-scroll-section>
                 <!--SECTION 3-->
 
-                <h1>Slide 2 </h1>
+                <h1 data-scroll>Slide 2 </h1>
             </div>
-            <div class="slide" id="timeline" data-anchor="timeline">
+            <div class="slide" id="timeline" data-anchor="timeline" data-scroll-section>
                 <!--SECTION 4-->
 
-                <h1>Slide 3 </h1>
+                <h1 data-scroll>Slide 3 </h1>
             </div>
-            <div class="slide" id="contact" data-anchor="contact">
+            <div class="slide" id="contact" data-anchor="contact" data-scroll-section>
                 <!--SECTION 5-->
 
-                <h1>Slide 4 </h1>
+                <h1 data-scroll>Slide 4 </h1>
             </div>
         </div>
     </div>
