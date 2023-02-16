@@ -25,13 +25,13 @@ a {
 
 h1 {
   text-align: center;
-  color: #f1f1f1;
+  color: #ffffff;
   font-size: 100px;
   font-family: Stfangsong;
 }
 
 p {
-  color: #f1f1f1;
+  color: #ffffff;
   font-size: 30px;
   font-family: Stfangsong;
 }
@@ -143,7 +143,18 @@ sl-button.hamburgerMenuIcon::part(base) {
  * src: https://www.w3schools.com/howto/howto_css_fullscreen_video.asp
 */
 
-/* Style the video: 100% width and height to cover the entire window */
+
+
+#heroText {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  right: 0;
+  top: 50%;
+  z-index: 3;
+  padding-right: 120px;
+  margin-top: -60px;
+}
 
 #videoWrapper {
   position: absolute;
@@ -153,6 +164,7 @@ sl-button.hamburgerMenuIcon::part(base) {
   z-index: 2;
 }
 
+/* Style the video: 100% width and height to cover the entire window */
 #heroVideo {
   position: sticky;
   right: 0;
@@ -218,22 +230,19 @@ sl-button#btmPauseBtn {
   }
  }
 
-#home h1, #videoWrapper h1 {
+#heroText h1 {
   text-align: right;
-  margin-right: 150px;
-  padding-top: 100px;
-  z-index: 10;
+  margin-bottom: 0;
+  margin-top: 0;
   /* Apply animation to this element */	
-  animation: scrollIn 2s ease-out;
+  animation: scrollIn 5s ease-in forwards;
 }
 
-#home p, #videoWrapper p {
+#heroText p {
   text-align: right;
-  margin-right: 150px;
-  padding-top: 10px;
-  z-index: 10;
+  margin-top: 0;
   /* Apply animation to this element */	
-  animation: scrollIn 2.5s ease-out;
+  animation: scrollIn 5s ease-in forwards;
 }
 /* ==========SECTION 2 STYLING============= */
 
@@ -276,8 +285,6 @@ sl-button#btmPauseBtn {
   right: 20;
   height: 100px;
 }
-
-
 
 }
 

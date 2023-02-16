@@ -65,16 +65,17 @@
     <!--MAIN CONTENT-->
     <div id="fullpage">
         <div class="section" data-anchor="main"  data-scroll-container>
-            <div class="slide" id="home" data-anchor="home" data-scroll-section>
+            <div class="slide" id="home" data-anchor="home">
                 <!-- Use a button to pause/play the video with JavaScript -->
                 <sl-button id="navPauseBtn" class="pauseBtn" variant="text" size="large">Replay</sl-button>
                 <!--SECTION 1-->
-                <h1 data-scroll data-scroll-speed="1">Adventure Starts Here</h1>
-                <p data-scroll data-scroll-speed="-6">Explore and Book Packages </p>
+                <div id="heroText" data-scroll-section>
+                    <h1 data-scroll data-scroll-speed="1">Adventure Starts Here</h1>
+                    <p data-scroll data-scroll-speed="1">Explore and Book Packages </p>
+                </div>
+                
                 <!-- The video -->
                 <div id="videoWrapper">
-                    <h1 data-scroll data-scroll-speed="1">Adventure Starts Here</h1>
-                    <p data-scroll data-scroll-speed="-6">Explore and Book Packages </p>
                     <video autoplay muted id="heroVideo">
                         <!-- Video Stock footage provided by Videvo, downloaded from videvo.net -->
                         <source src="./media/biking.mp4" type="video/mp4">
