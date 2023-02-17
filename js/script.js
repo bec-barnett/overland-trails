@@ -158,3 +158,8 @@ function redirectHome(){
   window.location.href = "";
 }
 
+document.addEventListener( 'DOMContentLoaded', function() {
+  var splide = new Splide( '.splide' );
+  splide.mount();
+} );
+
