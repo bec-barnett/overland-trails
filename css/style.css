@@ -35,7 +35,20 @@ p {
   font-family: Stfangsong;
 }
 
-
+/* Shoelace UI Customising the Base Colours */
+:root {
+  --sl-color-primary-50: rgb(251 249 246);
+  --sl-color-primary-100: rgb(243 235 224);
+  --sl-color-primary-200: rgb(234 220 200);
+  --sl-color-primary-300: rgb(224 204 173);
+  --sl-color-primary-400: rgb(210 182 138);
+  --sl-color-primary-500: rgb(185 155 109);
+  --sl-color-primary-600: rgb(153 128 90);
+  --sl-color-primary-700: rgb(125 105 74);
+  --sl-color-primary-800: rgb(103 87 61);
+  --sl-color-primary-900: rgb(73 62 43);
+  --sl-color-primary-950: rgb(45 38 26);
+}
 
 
 /* ==========HEADER============= */
@@ -124,6 +137,7 @@ sl-button.hamburgerMenuIcon::part(base) {
   height: 100px;
   background: url(../images/left.png) no-repeat;
   cursor: pointer;
+  animation: jiggle 3s infinite alternate;
 }
 .fp-controlArrow.fp-next {
   right: 10;
@@ -133,6 +147,11 @@ sl-button.hamburgerMenuIcon::part(base) {
   height: 100px;
   background: url(../images/right.png) no-repeat;
   cursor: pointer;
+  animation: jiggle 2s infinite alternate;
+}
+
+@keyframes jiggle {
+  to { transform: scale(1.2); }
 }
 
 
@@ -247,21 +266,7 @@ article p {
   font-size: 1.5em;
 }
 
-.splide__slide {
-  width: 100%;
-  height: 100%;
-  background-color: aqua;
 
-}
-
-.splide__slide img {
-  width: 100%;
-  height: 100%;
-}
-
-.splide {
-  margin-top: 70px;
-}
 
 
 sl-divider {
@@ -320,8 +325,45 @@ sl-divider {
   animation: scrollIn 5s ease-in forwards;
 }
 /* ==========SECTION 2 STYLING============= */
+/* Image Carousel (From Splide Library) */
+.splide__slide {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
 
+}
+
+.splide__slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.splide {
+  margin-top: 70px;
+}
 /* ==========SECTION 3 STYLING============= */
+/* Tab Group Stying for packages */
+sl-tab-group {
+  --indicator-color: #ffffff;
+  --track-color: #ffffff;
+}
+
+
+.tabHeading {
+  font-size: 25px;
+}
+
+#packagesWrapper p {
+  color: #CBAA77;
+}
+
+#packagesSection {
+  width:60%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
 
 /* ==========SECTION 4 STYLING============= */
 
