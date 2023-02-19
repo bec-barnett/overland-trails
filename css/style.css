@@ -221,7 +221,7 @@ sl-button#btmPauseBtn {
 /* Styling for major content sections */
 section {
   display: flex;
-    height: 75vh;
+  height: 75vh;
   width: 75vw;
   margin-left: auto;
   margin-right: auto;
@@ -240,7 +240,7 @@ article {
 }
 
 .right {
-  width: 50%;
+  width: 48%;
   max-width: 50%;
   text-align: left;
 }
@@ -248,6 +248,13 @@ article {
 article h1 {
   font-size: 30px;
   padding: 0;
+}
+
+article h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f1f1f1;
+  font-family: Vrinda;
 }
 
 .left h1 {
@@ -266,7 +273,14 @@ article p {
   font-size: 1.5em;
 }
 
+.italic {
+  font-style: italic;
+  color: rgb(196, 86, 23);
+}
 
+.flexContainer {
+  display: flex;
+}
 
 
 sl-divider {
@@ -343,27 +357,6 @@ sl-divider {
 .splide {
   margin-top: 70px;
 }
-/* ==========SECTION 3 STYLING============= */
-/* Tab Group Stying for packages */
-sl-tab-group {
-  --indicator-color: #ffffff;
-  --track-color: #ffffff;
-}
-
-
-.tabHeading {
-  font-size: 25px;
-}
-
-#packagesWrapper p {
-  color: #CBAA77;
-}
-
-#packagesSection {
-  width:60%;
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
 #overlayContainer{
   display: flex;
@@ -383,6 +376,21 @@ sl-tab-group {
   padding:15px;
   color: #19240e80;
   max-width: 20%;
+}
+/* ==========SECTION 3 STYLING============= */
+/* Tab Group Stying for packages */
+sl-tab-group {
+  --indicator-color: #ffffff;
+  --track-color: #ffffff;
+}
+
+.tabHeading {
+  font-size: 25px;
+}
+
+#packagesWrapper p {
+  width: 100%;
+  color: #CBAA77;
 }
 
 /* ==========SECTION 4 STYLING============= */
