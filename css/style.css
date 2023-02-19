@@ -1,14 +1,5 @@
 /* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
 /* some basic css resetting */
-@font-face {
-  font-family: Vrinda;
-  src: url(../fonts/vrinda.ttf);
-}
-
-@font-face {
-  font-family: Stfangsong;
-  src: url(../fonts/chinese.stfangso.ttf);
-}
 
 body {
   margin: 0;
@@ -35,6 +26,19 @@ p {
   font-family: Stfangsong;
 }
 
+/* Import Custom Fonts */
+@font-face {
+  /* Vrinda Font downloaded from http://sharefonts.net */
+  font-family: Vrinda;
+  src: url(../fonts/vrinda.ttf);
+}
+
+@font-face {
+  /* Stfangso Font downloaded from http://www.freefontsdownload.net */
+  font-family: Stfangsong;
+  src: url(../fonts/chinese.stfangso.ttf);
+}
+
 /* Shoelace UI Customising the Base Colours */
 :root {
   --sl-color-primary-50: rgb(251 249 246);
@@ -48,7 +52,7 @@ p {
   --sl-color-primary-800: rgb(103 87 61);
   --sl-color-primary-900: rgb(73 62 43);
   --sl-color-primary-950: rgb(45 38 26);
-  --sl-input-label-color:  rgb(251 249 246);
+  --sl-input-label-color: rgb(251 249 246);
 }
 
 
@@ -111,14 +115,18 @@ header {
   margin-left: auto;
   margin-right: auto;
   min-width: 200px;
-  right:0;
-  left:0;
+  right: 0;
+  left: 0;
   bottom: 0;
   font-size: 0.8em;
   padding: 10px;
   margin-bottom: 100px;
 }
 
+/* CSS Validator parses this as an error
+* However this is a valid with shoelace UI customisations
+* Source: https://shoelace.style/getting-started/customizing
+*/
 sl-button.hamburgerMenuIcon::part(base) {
   position: fixed;
   background-color: transparent;
@@ -126,7 +134,6 @@ sl-button.hamburgerMenuIcon::part(base) {
   left: 20px;
   top: 20px;
   width: 50px;
-  ;
   height: 50px;
   z-index: 10;
   border: none;
@@ -144,11 +151,8 @@ sl-button.hamburgerMenuIcon::part(base) {
   display: none;
 }
 
-
 /* Fullpage JS Arrows */
 .fp-controlArrow.fp-prev {
-  left: 10;
-  bottom: 500;
   border: none;
   width: 100px;
   height: 100px;
@@ -158,8 +162,6 @@ sl-button.hamburgerMenuIcon::part(base) {
 }
 
 .fp-controlArrow.fp-next {
-  right: 10;
-  bottom: 500;
   border: none;
   width: 100px;
   height: 100px;
@@ -180,8 +182,6 @@ sl-button.hamburgerMenuIcon::part(base) {
  * ref: W3 Schools. How To Create a Fullscreen Video
  * src: https://www.w3schools.com/howto/howto_css_fullscreen_video.asp
 */
-
-
 
 #heroText {
   position: relative;
@@ -214,6 +214,10 @@ sl-button.hamburgerMenuIcon::part(base) {
 }
 
 /* Style the buttons used to pause/play the video */
+/* CSS Validator parses this as an error
+* However this is a valid with shoelace UI customisations
+* Source: https://shoelace.style/getting-started/customizing
+*/
 sl-button.pauseBtn::part(base) {
   /* padding: 10px; */
   border: none;
@@ -223,6 +227,10 @@ sl-button.pauseBtn::part(base) {
   z-index: 100;
 }
 
+/* CSS Validator parses this as an error
+* However this is a valid with shoelace UI customisations
+* Source: https://shoelace.style/getting-started/customizing
+*/
 sl-button.pauseBtn::part(base):hover {
   background: rgba(221, 221, 221, 0.144);
 }
@@ -315,20 +323,21 @@ article p {
   width: 35px;
   height: 35px;
   margin-top: auto;
-  margin-bottom:auto;
+  margin-bottom: auto;
   padding: 5px;
 }
 
-h3{
+h3 {
   display: none;
 }
 
-
+/* Shoelace UI Divider */
 sl-divider {
   --color: rgb(194, 190, 189);
   --width: 2px;
 }
 
+/* Class used to wrap Shoelace UI Dividers and set custom width/height */
 .divider {
   margin-top: auto;
   height: 75%;
@@ -387,7 +396,7 @@ sl-divider {
 }
 
 /* ==========SECTION 2 STYLING============= */
-/* Image Carousel (From Splide Library) */
+/* Image Carousel (From Splide Library). https://splidejs.com/ */
 .splide__slide {
   width: 100%;
   height: 100%;
@@ -406,6 +415,7 @@ sl-divider {
   margin-top: 70px;
 }
 
+/* Using Shoelace UI Dialog component to create an expanding image "Modal"" */
 #overlayContainer {
   display: flex;
   width: 70vw;
@@ -450,16 +460,16 @@ sl-tab-group {
   width: 35px;
   height: 35px;
   margin-top: auto;
-  margin-bottom:auto;
+  margin-bottom: auto;
   padding: 5px;
 }
 
 /* ==========SECTION 4 STYLING============= */
-
+/* Grid layout for Timeline */
 .gridContainer {
   display: grid;
   grid-template-columns: 33% 33% 34%;
-  grid-template-rows: 33% 33% 33%; 
+  grid-template-rows: 33% 33% 33%;
 }
 
 .gridContainer img {
@@ -481,7 +491,7 @@ sl-tab-group {
   margin-bottom: auto;
 }
 
-#rightGridText{
+#rightGridText {
   grid-column: 2 / 4;
   grid-row: 1 / 3;
   padding-left: 20px;
@@ -489,23 +499,21 @@ sl-tab-group {
   margin-bottom: auto;
 }
 
-#timelineMorningArticle, #timelineAfternoonArticle {
+#timelineMorningArticle,
+#timelineAfternoonArticle {
   margin: 0;
   padding: 0;
   padding-top: 20px;
 }
 
-
-
-
 /* ==========SECTION 5 STYLING============= */
 
- .socialImage{
+.socialImage {
   width: 75px;
   height: 75px;
- }
+}
 
-#contactPageForm{
+#contactPageForm {
   margin-top: 5%;
 }
 
@@ -522,11 +530,6 @@ sl-tab-group {
 .socialLink h2 {
   padding-left: 20px;
 }
-
-/* ==========FOOTER STYLIING============= */
-
-
-
 
 /* ==========RESPONSIVE DESIGN============= */
 
@@ -545,20 +548,24 @@ sl-tab-group {
 
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1000px) {
 
+  /* Make logo bigger */
   #siteLogo {
     width: 40%;
     padding-top: 10px;
   }
 
-  .left, .right {
+  /* Get rid of two column layout, make items stack on top of each other */
+  .left,
+  .right {
     width: 100%;
     max-width: 100%;
     text-align: left;
   }
- 
-  .divider{
+
+  /* Shoelace Divider's no longer needed */
+  .divider {
     display: none;
   }
 
@@ -566,9 +573,10 @@ sl-tab-group {
     display: block;
   }
 
-.splide__slide {
-  text-align: center;
-}
+  /* Resize image slideshow */
+  .splide__slide {
+    text-align: center;
+  }
 
   .splide__slide img {
     width: 400px;
@@ -578,7 +586,7 @@ sl-tab-group {
   .flexContainer {
     display: block;
   }
-  
+
   .inline {
     justify-content: flex-start;
   }
@@ -592,8 +600,9 @@ sl-tab-group {
     text-align: center;
   }
 
-  .fp-controlArrow.fp-prev, .fp-controlArrow.fp-next {
-
+  /* Make Fullpage JS arrows a bit smaller */
+  .fp-controlArrow.fp-prev,
+  .fp-controlArrow.fp-next {
     width: 50px;
     height: 100px;
   }
@@ -619,26 +628,25 @@ sl-tab-group {
     max-height: 100px;
   }
 
-  #leftGridText, #rightGridText {
-    display: flexbox;
+  #leftGridText,
+  #rightGridText {
     width: 500px;
     max-width: 100%;
     max-height: 100%;
     text-align: left;
   }
 
-  .socialImage{
+  .socialImage {
     width: 50px;
     height: 50px;
-   }
-    
-  
+  }
+
   .socialLink {
     display: inline-block;
     margin: 0;
     padding: 10px;
   }
-  
+
   .socialLink h2 {
     display: none;
   }
@@ -650,7 +658,10 @@ sl-tab-group {
 }
 
 @media only screen and (max-width: 1100px) {
-  #videoWrapper, .pauseBtn {
+
+  /* Image background starts not displaying correctly at 1100px and below */
+  #videoWrapper,
+  .pauseBtn {
     display: none;
   }
 
@@ -658,7 +669,7 @@ sl-tab-group {
     height: 40vh;
     max-height: 40vh;
   }
-  
+
 }
 
 @media only screen and (max-width: 1300px) {
@@ -666,7 +677,8 @@ sl-tab-group {
     width: 100%;
   }
 
-  article p, .gridContainer p {
+  article p,
+  .gridContainer p {
     font-size: 1em;
   }
 
