@@ -231,37 +231,26 @@
             <div class="slide" id="contact" data-anchor="contact" data-scroll-section>
                 <!--SECTION 5-->
                 <section>
-                    <article class="left">
-                        <h1>Contact</h1>
-                        <p>
-                            Overland Trails is a Tasmanian Adventure company, offering all-inclusive packages that
-                            provide our customers with everything they need to experience this exciting activity
-                            regardless of experience.
-                        </p>
-                        <p>
-                            Our company was established in 2023 and is based in North-West Tasmania. We offer access to
-                            some of Tasmania's best mountain biking trails which are world-class in design. We also
-                            offer exclusive access to
-                            many private trails found on the Overland Trails property which are designed and maintained
-                            by us.
-                        </p>
-                        <p>
-                            Regardless of your experience level, we have something to offer you. Our experienced coaches
-                            can help you to learn the basics through to advanced techniques. We can provide transfers,
-                            accomodation and meals so that you can focus on getting as much time on track as possible.
-                        </p>
+                    <article class="left" id="contactPageForm">
+                        <h1>Contact Us</h1>
+                        <!-- Form using Shoelace UI Components. Source: https://shoelace.style/getting-started/form-controls -->
+                        <form id="contactForm">
+                            <span class="leftText">
+                            <sl-input name="name" label="Name" required></sl-input>
+                            <br />
+                            <sl-input type="email" label="Email" placeholder="you@example.com" required></sl-input>
+                            <br />
+                            <sl-textarea name="comment" label="Comment" required></sl-textarea>
+                            <br />
+                            <br /><br />
+                        </span><sl-button type="submit" variant="primary">Submit</sl-button></span>
+                        </form>
                     </article>
                     <span class="divider"><sl-divider vertical></sl-divider></span>
-                    <article class="right">
-                        <form action="">
-                            <label for="name">Name:</label>
-                            <input type="text" name="name">
-                            <label for="email">Email:</label>
-                            <input type="email" name="email">
-                            <label for="message">Message:</label>
-                            <input type="text" name="message">
-                            <sl-button>Submit</sl-button>
-                        </form>
+                    <article class="right" id="socialIcons">
+                        <div class="socialLink"><a href="https://www.instagram.com"><img src="./images/svg/instagram_logo_icon.svg" alt="Instagram Icon" class="socialImage"></a><h2>Instagram</h2></div>
+                        <div class="socialLink"><a href="https://www.facebook.com"><img src="./images/svg/facebook_logo_icon.svg" alt="Facebook Icon" class="socialImage"></a><h2>Facebook</h2></div>
+                        <div class="socialLink"><a href="https://www.twitter.com"><img src="./images/svg/twitter_logo_icon.svg" alt="Twitter Icon" class="socialImage"></a><h2>Twitter</h2></div>
                     </article>
                 </section>
             </div>

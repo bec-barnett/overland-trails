@@ -48,6 +48,7 @@ p {
   --sl-color-primary-800: rgb(103 87 61);
   --sl-color-primary-900: rgb(73 62 43);
   --sl-color-primary-950: rgb(45 38 26);
+  --sl-input-label-color:  rgb(251 249 246);
 }
 
 
@@ -318,6 +319,10 @@ sl-divider {
   z-index: 3;
 }
 
+.leftText {
+  text-align: left;
+}
+
 
 /* ==========SECTION 1 STYLING============= */
 #navPauseBtn {
@@ -425,6 +430,32 @@ sl-tab-group {
 }
 /* ==========SECTION 4 STYLING============= */
 
+
+
+/* ==========SECTION 5 STYLING============= */
+
+ .socialImage{
+  width: 75px;
+  height: 75px;
+ }
+
+#contactPageForm{
+  margin-top: 5%;
+}
+
+#socialIcons {
+  margin-top: 12%;
+}
+
+.socialLink {
+  display: flex;
+  margin-bottom: 50px;
+  margin-left: 20%;
+}
+
+.socialLink h2 {
+  padding-left: 20px;
+}
 
 /* ==========FOOTER STYLIING============= */
 
