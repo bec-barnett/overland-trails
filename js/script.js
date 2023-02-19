@@ -197,3 +197,14 @@ closeButton.addEventListener('click', () => {
 
 
 
+/**
+ * Contact Form
+ * */ 
+const form = document.querySelector('#contactForm');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    form.innerHTML = '<p>Thanks for your message!<br><br>We will be in contact shortly.</p>';
+  });
+
+
+
