@@ -14,32 +14,29 @@
 
 
 
-    <!--FullPage JS-->
+    <!--FullPage JS CDN Links-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.min.js"
         integrity="sha512-rNf09cQHIWzD8BU37lIb3rInygeWXW2hVqJ7niVtTPXWuVR3aFiph1eFIeDiEQV8J45u0qfp7ng8I3TzJHY4Eg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.15/fullpage.css"
         integrity="sha512-joJLRX4chQYCQlk0R4FXEgZHqsWA1hf4e+C+QKyi8fnfDm8FlEsNAVo+ByQhD19BrgVZGSOJKAQZa5M5gXDtpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!--Shoelace-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css" />
+    <!--Shoelace UI CDN Links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/themes/light.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0/dist/shoelace.js"></script>
 
-    <!-- Locomotive Scroll -->
+    <!-- Locomotive Scroll CDN Links-->
     <link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
-    <!-- Splide JS -->
+    <!-- Splide JS CDN Links -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
     <!-- Custom CSS By Rebecca Barnett -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="./images/favicon.ico">
-
-
-
 
 </head>
 
@@ -49,17 +46,19 @@
     <header id="head">
         <!--LOGO-->
         <a href="javascript:redirectHome()"><img src="./images/logo.png" alt="Overland Trails Logo" id="siteLogo"></a>
+        <!-- Hamburger Icon inside header. Opens up the side navigation menu. -->
         <sl-button onclick="openNav()" class="hamburgerMenuIcon" id="openNavBtn" variant="text"
             size="large">&#9776;</sl-button>
-
     </header>
 
     <!--NAVIGATION-->
     <div id="sideBar">
         <nav id="menu">
+            <!-- Inside the side navigation this hamburger button closes the side Navigation -->
+            <sl-button class="hamburgerMenuIcon" id="closeNavBtn" onclick="closeNav()" variant="text"
+                size="large">&#9776;</sl-button>
+            <!-- Main navigation -->
             <ul id="menu-nav">
-                <sl-button class="hamburgerMenuIcon" id="closeNavBtn" onclick="closeNav()" variant="text"
-                    size="large">&#9776;</sl-button>
                 <li data-menuanchor="home" class="current"><a href="javascript:redirectHome()">Home</a></li>
                 <li data-menuanchor="about"><a href="#about">About</a></li>
                 <li data-menuanchor="packages"><a href="#packages">Packages</a></li>
@@ -67,6 +66,7 @@
                 <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <!-- Disclaimer, copyright, ect. -->
         <p>This website has been created as part of an assignment in an approved course of study for Curtin
             University and contains copyright material not created by the author. All copyright material used
             remains copyright of the respective owners and has been used here pursuant to Section 40 of the
@@ -78,16 +78,18 @@
     <!--MAIN CONTENT-->
     <div id="fullpage">
         <div class="section" data-anchor="main" data-scroll-container>
+            <!--SECTION 1 - Homepage (Fullpage JS first slide) -->
             <div class="slide" id="home" data-anchor="home">
                 <!-- Use a button to pause/play the video with JavaScript -->
                 <sl-button id="navPauseBtn" class="pauseBtn" variant="text" size="large">Replay</sl-button>
-                <!--SECTION 1-->
+                
                 <div id="heroText" data-scroll-section>
+                    <!-- Hero text, animated with CSS -->
                     <h1 data-scroll data-scroll-speed="1">Adventure Starts Here</h1>
                     <p data-scroll data-scroll-speed="4">Plan and Book Your Mountain Biking Experience</p>
                 </div>
 
-                <!-- The video -->
+                <!-- The 'Hero' video that plays on site load -->
                 <div id="videoWrapper">
                     <video autoplay muted id="heroVideo">
                         <!-- Video Stock footage provided by Videvo, downloaded from videvo.net -->
@@ -96,13 +98,16 @@
                 </div>
                 <!-- Use a button to pause/play the video with JavaScript -->
                 <sl-button id="btmPauseBtn" class="pauseBtn" variant="text" size="large">II</sl-button>
-
             </div>
+
+            <!--SECTION 2 - About (Fullpage JS second slide) -->
             <div class="slide" id="about" data-anchor="about" data-scroll-section>
-                <!--SECTION 2-->
                 <section>
+                    <h3>About Us</h3>
+
+                    <!-- Left side of section- About us text -->
                     <article class="left">
-                        <h1>About Us</h1>
+                        <h2>About Us</h2>
                         <p>
                             Overland Trails is a Tasmanian Adventure company, offering all-inclusive packages that
                             provide our customers with everything they need to experience this exciting activity
@@ -121,9 +126,16 @@
                             accomodation and meals so that you can focus on getting as much time on track as possible.
                         </p>
                     </article>
+
+                    <!-- Shoelace UI divider, wrapped inside a span so it's width can be set with css -->
                     <span class="divider"><sl-divider vertical></sl-divider></span>
+
+                    <!-- Right side of section - Image slideshow -->
                     <article class="right">
-                        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                        <h3>Images</h3>
+                        
+                        <!-- Splide Image Slideshow -->
+                        <div class="splide" role="group">
                             <div class="splide__track">
                                 <ul class="splide__list">
                                     <li class="splide__slide"><img
@@ -149,28 +161,35 @@
                         </div>
                     </article>
                 </section>
+
                 <!-- Shoelace Dialog used as an Image 'Overlay' -->
                 <sl-dialog class="dialog-width" style="--width: 80vw;" no-header='true' id="fullscreenDialog">
                     <div id="overlayContainer">
+                        <!-- The overlay image and description paragraph are updated with javascript depending on which image is clicked. -->
                         <img src="temp.jpg" alt="temp alt" id="fullscreenPicture">
                         <p id='fullscreenPictureDescription'>Description of Picture</p>
                     </div>
                     <sl-button slot="footer" variant="primary">Close</sl-button>
                 </sl-dialog>
+
             </div>
+            
+            <!--SECTION 3 - Packages (Fullpage JS third slide) -->
             <div class="slide" id="packages" data-anchor="packages" data-scroll-section>
-                <!--SECTION 3-->
                 <section>
+                    <h3>Packages</h3>
                     <article>
-                        <h1 data-scroll>Packages</h1>
+                        <h2 data-scroll>Packages</h2>
                         <!-- Shoelace Tab Group Used for Package display  -->
                         <sl-tab-group>
                             <sl-tab slot="nav" panel="package1"><span class="tabHeading">Package 1</span></sl-tab>
                             <sl-tab slot="nav" panel="package2"><span class="tabHeading">Package 2</span></sl-tab>
+                            <!-- Package 1 Tab -->
                             <sl-tab-panel name="package1">
                                 <div class="flexContainer">
                                     <article class="left">
                                         <div class="inline">
+                                            <!-- Icons used as as a visual cue for what package contains. -->
                                             <h2><span class="italic">4 Day Adventure</span></h2>
                                             <img src="./images/icons/bikeIcon.png" alt="Bike Icon">
                                             <img src="./images/icons/personIcon.png" alt="Guide Icon">
@@ -187,13 +206,14 @@
                                         <p>Also included are all meals, sourced from local Tasmanian produce with a menu
                                             produced in conjunction with some of Tasmania's local Resaurants.</p>
                                     </article>
-                                    <span class="divider"><sl-divider vertical></sl-divider></span>
                                     <article class="right">
+                                        <h3>Package Images</h3>
                                         <img src="./images/packages/axel-brunst-75DQJLMjKNw-unsplash.jpg"
                                             alt="A man riding a bike through a dirt trail." class="packageImage">
                                     </article>
                                 </div>
                             </sl-tab-panel>
+                            <!-- Package 2 Tab -->
                             <sl-tab-panel name="package2">
                                 <div class="flexContainer">
                                     <article class="left">
@@ -217,6 +237,7 @@
                                     </article>
                                     <span class="divider"><sl-divider vertical></sl-divider></span>
                                     <article class="right">
+                                        <h3>Package Images</h3>
                                         <img src="./images/packages/william-hook-pa0rr3rVB-U-unsplash.jpg"
                                             alt="A mountain bike travelling downhill fast." class="packageImage">
                                     </article>
@@ -226,60 +247,115 @@
                     </article>
                 </section>
             </div>
+
+            <!--SECTION 4 - Timeline (Fullpage JS fourth slide) -->
             <div class="slide" id="timeline" data-anchor="timeline" data-scroll-section>
-                <!--SECTION 4-->
                 <section id="timelineContent">
+                    <h3>Timeline</h3>
+                    <!-- Left side of image slideshow. CSS Grid display -->
+                    <!-- Each image is wrapped in a Shoelace UI tooltip - this gives each image hover-over text. -->
+                    <!-- Additionally, each image when clicked will update the description text. -->
                     <article class="left" id="timelineMorningArticle">
                         <div class="gridContainer">
-                            <div class="gridItem"><sl-tooltip content="8 AM" placement="bottom"><img src="./images/timeline/1nick-rickert-F6lzAY7Nd28-unsplash.jpg" alt="Mountain bikes loaded on the back of a truck." class="morningImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="9 AM" placement="bottom"><img src="./images/timeline/2forest.jpg" alt="A dark and mysterious forest." class="morningImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="10 AM" placement="bottom"><img src="./images/timeline/3tim-foster-qrIy8dBzCVU-unsplash.jpg" alt="Man riding bike through forest with sunshine." class="morningImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="11 AM" placement="bottom"><img src="./images/timeline/4michal-kmet-M9O6GRrEEDY-unsplash.jpg" alt="Snow capped mountains in the distance beyond mountain bike track" class="morningImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="12 PM" placement="bottom"><img src="./images/timeline/5chris-henry-pnvOQ2YSEDc-unsplash.jpg" alt="A man stopped on a mountain bike track" class="morningImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="8 AM" placement="bottom"><img
+                                        src="./images/timeline/1nick-rickert-F6lzAY7Nd28-unsplash.jpg"
+                                        alt="Mountain bikes loaded on the back of a truck."
+                                        class="morningImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="9 AM" placement="bottom"><img
+                                        src="./images/timeline/2forest.jpg" alt="A dark and mysterious forest."
+                                        class="morningImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="10 AM" placement="bottom"><img
+                                        src="./images/timeline/3tim-foster-qrIy8dBzCVU-unsplash.jpg"
+                                        alt="Man riding bike through forest with sunshine."
+                                        class="morningImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="11 AM" placement="bottom"><img
+                                        src="./images/timeline/4michal-kmet-M9O6GRrEEDY-unsplash.jpg"
+                                        alt="Snow capped mountains in the distance beyond mountain bike track"
+                                        class="morningImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="12 PM" placement="bottom"><img
+                                        src="./images/timeline/5chris-henry-pnvOQ2YSEDc-unsplash.jpg"
+                                        alt="A man stopped on a mountain bike track" class="morningImage"></sl-tooltip>
+                            </div>
                             <div class="gridItem" id="leftGridText">
                                 <h2>Typical Morning</h2>
-                                <p id="morningParagraph">After enjoying a comfortable nights sleep in our on-site camp, get ready for non-stop adventure across our mountain bike park. Click an image to learn more.</p>
+                                <p id="morningParagraph">After enjoying a comfortable nights sleep in our on-site camp,
+                                    get ready for non-stop adventure across our mountain bike park. Click an image to
+                                    learn more.</p>
                             </div>
                         </div>
                     </article>
+                    <!-- Right side of image slideshow. CSS Grid display -->
                     <article class="right" id="timelineAfternoonArticle">
                         <div class="gridContainer">
-                            <div class="gridItem"><sl-tooltip content="1 PM" placement="bottom"><img src="./images/timeline/6kateryna-hliznitsova-GyE2Iuk3j9g-unsplash.jpg" alt="A picnic spread on a grassy field" class="afternoonImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="3 PM" placement="bottom"><img src="./images/timeline/7extrememountainbiking.jpg" alt="Man with mountain bike poised at the edge of a sharp cliff" class="afternoonImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="4 PM" placement="bottom"><img src="./images/timeline/8patrick-hendry-1ow9zrlldJU-unsplash.jpg" alt="Riderless bike with sunset in background" class="afternoonImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="5 PM" placement="bottom"><img src="./images/timeline/9jan-kopriva-0MrV3XwiYEE-unsplash.jpg" alt="Black and white tree canopy at sunset" class="afternoonImage"></sl-tooltip></div>
-                            <div class="gridItem"><sl-tooltip content="6 PM" placement="bottom"><img src="./images/timeline/10scott-goodwill-y8Ngwq34_Ak-unsplash.jpg" alt="Picture from within a cozy tent" class="afternoonImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="1 PM" placement="bottom"><img
+                                        src="./images/timeline/6kateryna-hliznitsova-GyE2Iuk3j9g-unsplash.jpg"
+                                        alt="A picnic spread on a grassy field" class="afternoonImage"></sl-tooltip>
+                            </div>
+                            <div class="gridItem"><sl-tooltip content="3 PM" placement="bottom"><img
+                                        src="./images/timeline/7extrememountainbiking.jpg"
+                                        alt="Man with mountain bike poised at the edge of a sharp cliff"
+                                        class="afternoonImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="4 PM" placement="bottom"><img
+                                        src="./images/timeline/8patrick-hendry-1ow9zrlldJU-unsplash.jpg"
+                                        alt="Riderless bike with sunset in background"
+                                        class="afternoonImage"></sl-tooltip></div>
+                            <div class="gridItem"><sl-tooltip content="5 PM" placement="bottom"><img
+                                        src="./images/timeline/9jan-kopriva-0MrV3XwiYEE-unsplash.jpg"
+                                        alt="Black and white tree canopy at sunset" class="afternoonImage"></sl-tooltip>
+                            </div>
+                            <div class="gridItem"><sl-tooltip content="6 PM" placement="bottom"><img
+                                        src="./images/timeline/10scott-goodwill-y8Ngwq34_Ak-unsplash.jpg"
+                                        alt="Picture from within a cozy tent" class="afternoonImage"></sl-tooltip></div>
                             <div class="gridItem" id="rightGridText">
                                 <h2>Typical Afternoon</h2>
-                                <p id="afternoonParagraph">After lunch, its all downhill from here as we make our way downhill back to base camp. Click an image to learn more.</p>
+                                <p id="afternoonParagraph">After lunch, its all downhill from here as we make our way
+                                    downhill back to base camp. Click an image to learn more.</p>
                             </div>
                         </div>
                     </article>
                 </section>
             </div>
+
+            <!--SECTION 5 - Contact (Fullpage JS fifth slide) -->
             <div class="slide" id="contact" data-anchor="contact" data-scroll-section>
-                <!--SECTION 5-->
                 <section>
+                    <h3>Contact Us</h3>
+
+                    <!-- Contact Form -->
                     <article class="left" id="contactPageForm">
-                        <h1>Contact Us</h1>
+                        <h2>Contact Us</h2>
                         <!-- Form using Shoelace UI Components. Source: https://shoelace.style/getting-started/form-controls -->
                         <form id="contactForm">
                             <span class="leftText">
-                            <sl-input name="name" label="Name" required></sl-input>
-                            <br />
-                            <sl-input type="email" label="Email" placeholder="you@example.com" required></sl-input>
-                            <br />
-                            <sl-textarea name="comment" label="Comment" required></sl-textarea>
-                            <br />
-                            <br /><br />
-                        </span><sl-button type="submit" variant="primary">Submit</sl-button></span>
+                                <sl-input name="name" label="Name" required></sl-input>
+                                <br>
+                                <sl-input type="email" label="Email" placeholder="you@example.com" required></sl-input>
+                                <br>
+                                <sl-textarea name="comment" label="Comment" required></sl-textarea>
+                                <br>
+                                <br><br>
+                            </span>
+                            <sl-button type="submit" variant="primary">Submit</sl-button>
                         </form>
                     </article>
                     <span class="divider"><sl-divider vertical></sl-divider></span>
+
+                    <!-- Social Media Links -->
                     <article class="right" id="socialIcons">
-                        <div class="socialLink"><a href="https://www.instagram.com"><img src="./images/svg/instagram_logo_icon.svg" alt="Instagram Icon" class="socialImage"></a><h2>Instagram</h2></div>
-                        <div class="socialLink"><a href="https://www.facebook.com"><img src="./images/svg/facebook_logo_icon.svg" alt="Facebook Icon" class="socialImage"></a><h2>Facebook</h2></div>
-                        <div class="socialLink"><a href="https://www.twitter.com"><img src="./images/svg/twitter_logo_icon.svg" alt="Twitter Icon" class="socialImage"></a><h2>Twitter</h2></div>
+                        <div class="socialLink"><a href="https://www.instagram.com"><img
+                                    src="./images/svg/instagram_logo_icon.svg" alt="Instagram Icon"
+                                    class="socialImage"></a>
+                            <h2>Instagram</h2>
+                        </div>
+                        <div class="socialLink"><a href="https://www.facebook.com"><img
+                                    src="./images/svg/facebook_logo_icon.svg" alt="Facebook Icon"
+                                    class="socialImage"></a>
+                            <h2>Facebook</h2>
+                        </div>
+                        <div class="socialLink"><a href="https://www.twitter.com"><img
+                                    src="./images/svg/twitter_logo_icon.svg" alt="Twitter Icon" class="socialImage"></a>
+                            <h2>Twitter</h2>
+                        </div>
                     </article>
                 </section>
             </div>
@@ -290,7 +366,7 @@
 
     <!--FOOTER-->
     <footer>
-
+        
     </footer>
 
     <!--Custom JS-->

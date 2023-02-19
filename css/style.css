@@ -312,6 +312,10 @@ article p {
   padding: 5px;
 }
 
+h3{
+  display: none;
+}
+
 
 sl-divider {
   --color: rgb(194, 190, 189);
