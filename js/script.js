@@ -25,9 +25,12 @@ const scroller = new LocomotiveScroll({
  * Source: https://www.w3schools.com/howto/howto_js_sidenav.asp
 */
 function openNav() {
-  var size = window.matchMedia("(max-width: 768px)")
-  if (size.matches) { // If media query matches
+  var sizeSmall = window.matchMedia("(max-width: 768px)")
+  var sizeMed = window.matchMedia("(max-width: 1300px)");
+  if (sizeSmall.matches) { // If media query matches
     document.getElementById("sideBar").style.width = "100%";
+  } else if (sizeMed.matches) {
+    document.getElementById("sideBar").style.width = "30%";
   } else {
     document.getElementById("sideBar").style.width = "20%";
   }
@@ -177,15 +180,19 @@ const description = document.getElementById('fullscreenPictureDescription');
 const slideshowImages = document.querySelectorAll(".slideshowImage");
 const header = document.getElementById('head');
 
-for (var i = 0, len = slideshowImages.length; i < len; i += 1) {
-    let imageURL = slideshowImages[i].src;
-    let imageDescription = slideshowImages[i].getAttribute('alt');
-    slideshowImages[i].addEventListener('click', () => {
-      dialog.show();
-      header.style.display = 'none';
-      dialogImage.src = imageURL;
-      description.innerHTML = imageDescription; 
-  });
+// No overlay if viewport is too small
+var size = window.matchMedia("(max-width: 1400px)");
+if (!size.matches) { // If media query matches
+  for (var i = 0, len = slideshowImages.length; i < len; i += 1) {
+      let imageURL = slideshowImages[i].src;
+      let imageDescription = slideshowImages[i].getAttribute('alt');
+      slideshowImages[i].addEventListener('click', () => {
+        dialog.show();
+        header.style.display = 'none';
+        dialogImage.src = imageURL;
+        description.innerHTML = imageDescription; 
+    });
+  }
 }
 
 

@@ -80,7 +80,7 @@ header {
   background: #50702df6;
   height: 100%;
   z-index: 3;
-  overflow-x: hidden;
+  overflow: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
@@ -107,9 +107,16 @@ header {
 }
 
 #sideBar p {
-  font-size: 1em;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 200px;
+  right:0;
+  left:0;
+  bottom: 0;
+  font-size: 0.8em;
   padding: 10px;
-  margin-top: 70%;
+  margin-bottom: 100px;
 }
 
 sl-button.hamburgerMenuIcon::part(base) {
@@ -438,6 +445,15 @@ sl-tab-group {
 .packageImage {
   width: 80%;
 }
+
+.bikeIcon {
+  width: 35px;
+  height: 35px;
+  margin-top: auto;
+  margin-bottom:auto;
+  padding: 5px;
+}
+
 /* ==========SECTION 4 STYLING============= */
 
 .gridContainer {
@@ -523,33 +539,135 @@ sl-tab-group {
     font-size: 30px;
   }
 
-  #videoWrapper {
-    display: none;
+  #heroText {
+    margin-top: -30px;
   }
 
-  .pauseBtn {
-    display: none;
-  }
+}
 
-  /* Fullpage JS Arrows */
-  .fp-controlArrow.fp-prev {
-    left: 20;
-    width: 100px;
-    height: 100px;
-  }
-
-  .fp-controlArrow.fp-next {
-    right: 20;
-    height: 100px;
-  }
+@media only screen and (max-width: 1000px){
 
   #siteLogo {
     width: 40%;
     padding-top: 10px;
   }
 
-  #heroText {
-    margin-top: -30px;
+  .left, .right {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+ 
+  .divider{
+    display: none;
+  }
+
+  section {
+    display: block;
+  }
+
+.splide__slide {
+  text-align: center;
+}
+
+  .splide__slide img {
+    width: 400px;
+    height: 250px;
+  }
+
+  .flexContainer {
+    display: block;
+  }
+  
+  .inline {
+    justify-content: flex-start;
+  }
+
+  .packageImage {
+    width: 400px;
+    height: 250px;
+  }
+
+  .right {
+    text-align: center;
+  }
+
+  .fp-controlArrow.fp-prev, .fp-controlArrow.fp-next {
+
+    width: 50px;
+    height: 100px;
+  }
+
+  .tabHeading {
+    font-size: 16px;
+  }
+
+  #packages h2 {
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .gridItem {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  #leftGridText, #rightGridText {
+    display: flexbox;
+    width: 500px;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: left;
+  }
+
+  .socialImage{
+    width: 50px;
+    height: 50px;
+   }
+    
+  
+  .socialLink {
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .socialLink h2 {
+    display: none;
+  }
+
+  #sideBar a {
+    padding: 8px 8px 8px 8px;
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+  #videoWrapper, .pauseBtn {
+    display: none;
+  }
+
+  #overlayContainer {
+    height: 40vh;
+    max-height: 40vh;
+  }
+  
+}
+
+@media only screen and (max-width: 1300px) {
+  #videoWrapper {
+    width: 100%;
+  }
+
+  article p, .gridContainer p {
+    font-size: 1em;
   }
 
 }
