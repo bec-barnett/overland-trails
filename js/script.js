@@ -195,7 +195,43 @@ closeButton.addEventListener('click', () => {
   header.style.display = 'inline';
 });
 
+/**
+ * Add Event Listeners to Timeline Images
+ * When Images are clicked, the description text updates
+ * 
+ */
+const mornTimelinePicDescriptions = [
+  "8AM: After breakfast take the easy way up the hill in air-conditioned comfort.",
+  "9AM: Enjoy the peacefulness that only the Tasmanian remote wilderness can offer. You'll feel miles away from civilisation.",
+  "10AM: Develop an appetite as you make your way cross-country on our unique private mountain biking tracks.",
+  "11AM: Pause and appreciate the view as we head further away from civilisation.",
+  "12PM: Keep an eye out for the local wildlife!"
+];
+const afternTimelinePicDescriptions = [
+  "1PM: Enjoy a lunchtime spread from some of Tasmania's finest producers. Sample some of Tasmania's famous cold-climate wines.",
+  "3PM: Marvel at the view and get ready for an epic downhill track back towards camp.",
+  "4PM: Enjoy an endless sunset that stretches on forever in the southern highlands.",
+  "5PM: Practice some technical skills around the camp feature ground. You'll put them to good use tomorrow.",
+  "6PM: Arrive to find your cozy camp setup and waiting for you. A good nights rest awaits."
+];
+const morningTimelinePictures = document.querySelectorAll(".morningImage");
+const afternoonTimelinePictures = document.querySelectorAll(".afternoonImage");
+const morningTimelineDescription = document.getElementById('morningParagraph');
+const afternoonTimelineDescription = document.getElementById('afternoonParagraph');
 
+for (var i = 0, len = morningTimelinePictures.length; i < len; i += 1) {
+  let desc = mornTimelinePicDescriptions[i];
+  morningTimelinePictures[i].addEventListener('click', () => {
+    morningTimelineDescription.innerHTML = desc; 
+});
+}
+
+for (var i = 0, len = afternoonTimelinePictures.length; i < len; i += 1) {
+  let desc = afternTimelinePicDescriptions[i];
+  afternoonTimelinePictures[i].addEventListener('click', () => {
+    afternoonTimelineDescription.innerHTML = desc; 
+});
+}
 
 /**
  * Contact Form
