@@ -58,15 +58,17 @@ header {
   top: 0;
   height: 200px;
   z-index: 2;
-  width:100%;
+  width: 100%;
   text-align: center;
-  
+
 }
+
 /* ==========LOGO============= */
 #siteLogo {
   width: 20%;
   padding-top: 20px;
 }
+
 /* ==========NAVIGATION============= */
 /* Add some content at the bottom of the video/page */
 #sideBar {
@@ -74,7 +76,7 @@ header {
   left: 0;
   top: 0;
   width: 0;
-  background: #50702d80;
+  background: #50702df6;
   height: 100%;
   z-index: 3;
   overflow-x: hidden;
@@ -109,7 +111,8 @@ sl-button.hamburgerMenuIcon::part(base) {
   font-size: 50px;
   left: 20px;
   top: 20px;
-  width: 50px;;
+  width: 50px;
+  ;
   height: 50px;
   z-index: 10;
   border: none;
@@ -123,7 +126,7 @@ sl-button.hamburgerMenuIcon::part(base) {
   margin-left: 50px;
 }
 
-#closeNavBtn{
+#closeNavBtn {
   display: none;
 }
 
@@ -139,6 +142,7 @@ sl-button.hamburgerMenuIcon::part(base) {
   cursor: pointer;
   animation: jiggle 3s infinite alternate;
 }
+
 .fp-controlArrow.fp-next {
   right: 10;
   bottom: 500;
@@ -151,7 +155,9 @@ sl-button.hamburgerMenuIcon::part(base) {
 }
 
 @keyframes jiggle {
-  to { transform: scale(1.2); }
+  to {
+    transform: scale(1.2);
+  }
 }
 
 
@@ -212,7 +218,8 @@ sl-button#btmPauseBtn {
   background-color: #818181b4;
   left: 120px;
   bottom: 30px;
-  width: 50px;;
+  width: 50px;
+  ;
   height: 50px;
   z-index: 10;
 }
@@ -255,6 +262,7 @@ article h2 {
   font-weight: bold;
   color: #f1f1f1;
   font-family: Vrinda;
+  margin-right: 20px;
 }
 
 .left h1 {
@@ -280,6 +288,21 @@ article p {
 
 .flexContainer {
   display: flex;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.inline {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inline img {
+  width: 35px;
+  height: 35px;
+  margin-top: auto;
+  margin-bottom:auto;
+  padding: 5px;
 }
 
 
@@ -292,6 +315,7 @@ sl-divider {
   margin-top: auto;
   height: 75%;
   margin-bottom: auto;
+  z-index: 3;
 }
 
 
@@ -316,28 +340,30 @@ sl-divider {
 
 /* Animation for scrolling text */
 @keyframes scrollIn {
-  0%   { 
-  transform: translateY(200%); 		
+  0% {
+    transform: translateY(200%);
   }
-  100% { 
-  transform: translateY(0%); 
+
+  100% {
+    transform: translateY(0%);
   }
- }
+}
 
 #heroText h1 {
   text-align: right;
   margin-bottom: 0;
   margin-top: 0;
-  /* Apply animation to this element */	
+  /* Apply animation to this element */
   animation: scrollIn 5s ease-in forwards;
 }
 
 #heroText p {
   text-align: right;
   margin-top: 0;
-  /* Apply animation to this element */	
+  /* Apply animation to this element */
   animation: scrollIn 5s ease-in forwards;
 }
+
 /* ==========SECTION 2 STYLING============= */
 /* Image Carousel (From Splide Library) */
 .splide__slide {
@@ -358,7 +384,7 @@ sl-divider {
   margin-top: 70px;
 }
 
-#overlayContainer{
+#overlayContainer {
   display: flex;
   width: 70vw;
   height: 70vh;
@@ -373,10 +399,11 @@ sl-divider {
 }
 
 #overlayContainer p {
-  padding:15px;
+  padding: 15px;
   color: #19240e80;
   max-width: 20%;
 }
+
 /* ==========SECTION 3 STYLING============= */
 /* Tab Group Stying for packages */
 sl-tab-group {
@@ -393,6 +420,9 @@ sl-tab-group {
   color: #CBAA77;
 }
 
+.packageImage {
+  width: 80%;
+}
 /* ==========SECTION 4 STYLING============= */
 
 
@@ -407,11 +437,11 @@ sl-tab-group {
   h1 {
     font-size: 50px;
   }
-  
+
   p {
     font-size: 30px;
   }
-  
+
   #videoWrapper {
     display: none;
   }
@@ -420,25 +450,25 @@ sl-tab-group {
     display: none;
   }
 
-/* Fullpage JS Arrows */
-.fp-controlArrow.fp-prev {
-  left: 20;
-  width: 100px;
-  height: 100px;
-}
-.fp-controlArrow.fp-next {
-  right: 20;
-  height: 100px;
-}
+  /* Fullpage JS Arrows */
+  .fp-controlArrow.fp-prev {
+    left: 20;
+    width: 100px;
+    height: 100px;
+  }
 
-#siteLogo {
-  width: 40%;
-  padding-top: 10px;
-}
+  .fp-controlArrow.fp-next {
+    right: 20;
+    height: 100px;
+  }
 
-#heroText {
-  margin-top: -30px;
-}
+  #siteLogo {
+    width: 40%;
+    padding-top: 10px;
+  }
+
+  #heroText {
+    margin-top: -30px;
+  }
 
 }
-
