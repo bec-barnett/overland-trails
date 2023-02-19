@@ -158,8 +158,42 @@ function redirectHome(){
   window.location.href = "";
 }
 
+/**
+ * Add support for the splide library
+ * */ 
 document.addEventListener( 'DOMContentLoaded', function() {
   var splide = new Splide( '.splide' );
   splide.mount();
 } );
+
+
+/**
+ * Open a fullscreen dialog to make a picture larger
+ * Uses shoelace dialog component
+*/
+const dialog = document.querySelector('.dialog-width');
+const dialogImage = document.getElementById('fullscreenPicture');
+const description = document.getElementById('fullscreenPictureDescription');
+const slideshowImages = document.querySelectorAll(".slideshowImage");
+const header = document.getElementById('head');
+
+for (var i = 0, len = slideshowImages.length; i < len; i += 1) {
+    let imageURL = slideshowImages[i].src;
+    let imageDescription = slideshowImages[i].getAttribute('alt');
+    slideshowImages[i].addEventListener('click', () => {
+      dialog.show();
+      header.style.display = 'none';
+      dialogImage.src = imageURL;
+      description.innerHTML = imageDescription; 
+  });
+}
+
+
+const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+closeButton.addEventListener('click', () => {
+  dialog.hide();
+  header.style.display = 'inline';
+});
+
+
 

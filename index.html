@@ -46,7 +46,7 @@
 <body>
 
     <!--HEADER-->
-    <header>
+    <header id="head">
         <!--LOGO-->
         <a href="javascript:redirectHome()"><img src="./images/logo.png" alt="Overland Trails Logo" id="siteLogo"></a>
         <sl-button onclick="openNav()" class="hamburgerMenuIcon"  id="openNavBtn" variant="text" size="large">&#9776;</sl-button>
@@ -113,17 +113,24 @@
                         <div class="splide" role="group" aria-label="Splide Basic HTML Example">
                             <div class="splide__track">
                                   <ul class="splide__list">
-                                    <li class="splide__slide"><img src="./images/slideshow/amy-burgess-zr1z9l8STvc-unsplash.jpg" alt="Dirt Track Leading into forest"></li>
-                                    <li class="splide__slide"><img src="./images/slideshow/lucas-parker-Jlba19sPjdM-unsplash.jpg" alt="Quiet Colourful Forest"></li>
-                                    <li class="splide__slide"><img src="./images/slideshow/mountainbikingwithview.jpg" alt="Grassy Field with Mountainbike in the Foreground"></li>
-                                    <li class="splide__slide"><img src="./images/slideshow/plainbike.jpg" alt="A bike standing amongst a grassy field"></li>
-                                    <li class="splide__slide"><img src="./images/slideshow/tim-foster-k_76BsRGSWM-unsplash.jpg" alt="Man riding a mountainbike over a vertical jump"></li>
-
+                                    <li class="splide__slide"><img src="./images/slideshow/amy-burgess-zr1z9l8STvc-unsplash.jpg" alt="One of our many fantastic trails found on the property." class="slideshowImage"></li>
+                                    <li class="splide__slide"><img src="./images/slideshow/lucas-parker-Jlba19sPjdM-unsplash.jpg" alt="The beautiful forest forms a backdrop for all activities." class="slideshowImage"></li>
+                                    <li class="splide__slide"><img src="./images/slideshow/mountainbikingwithview.jpg" alt="One of our hard-tail bikes which can be hired as part of any of our Mountain Biking packages." class="slideshowImage"></li>
+                                    <li class="splide__slide"><img src="./images/slideshow/plainbike.jpg" alt="One of our duel suspension bikes which can be hired as part of any of our Mountain Biking packages." class="slideshowImage"></li>
+                                    <li class="splide__slide"><img src="./images/slideshow/tim-foster-k_76BsRGSWM-unsplash.jpg" alt="Vertical jumps such as this one are just a sample of the features built into our tracks." class="slideshowImage"></li>
                                   </ul>
                             </div>
                           </div>
                     </article>
                 </section>
+                <!-- Shoelace Dialog used as an Image 'Overlay' -->
+                <sl-dialog class="dialog-width" style="--width: 80vw;" no-header='true' id="fullscreenDialog">
+                    <div id="overlayContainer">
+                        <img src="temp.jpg" alt="temp alt" id="fullscreenPicture">
+                        <p id='fullscreenPictureDescription'>Description of Picture</p>
+                    </div>
+                    <sl-button slot="footer" variant="primary">Close</sl-button>
+                </sl-dialog>
             </div>
             <div class="slide" id="packages" data-anchor="packages" data-scroll-section>
                 <!--SECTION 3-->
