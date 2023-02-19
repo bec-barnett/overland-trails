@@ -3,6 +3,13 @@
 
 // Add event listener for mousewheel for custom horizontal scroll
 window.addEventListener('mousewheel', function (e) {
+  e.preventDefault();
+  scrollPages(e.wheelDelta); // handle mousewheel event
+});
+
+// Wheel event for firefox
+window.addEventListener('wheel', function (e) {
+  e.preventDefault();
   scrollPages(e.wheelDelta); // handle mousewheel event
 });
 
