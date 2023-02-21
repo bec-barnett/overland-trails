@@ -114,7 +114,7 @@ header {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  min-width: 200px;
+  min-width: 350px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -154,20 +154,24 @@ sl-button.hamburgerMenuIcon::part(base) {
 /* Fullpage JS Arrows */
 .fp-controlArrow.fp-prev {
   border: none;
-  width: 100px;
-  height: 100px;
-  background: url(../images/left.png) no-repeat;
+  width: 7%;
+  height: 7%;
+  background: url(../images/svg/ArrowLeft.svg) no-repeat;
   cursor: pointer;
   animation: jiggle 3s infinite alternate;
 }
 
 .fp-controlArrow.fp-next {
   border: none;
-  width: 100px;
-  height: 100px;
-  background: url(../images/right.png) no-repeat;
+  width: 7%;
+  height: 7%;
+  background: url(../images/svg/ArrowRight.svg) no-repeat;
   cursor: pointer;
   animation: jiggle 2s infinite alternate;
+}
+
+.fp-next {
+  right: 0px !important;
 }
 
 @keyframes jiggle {
@@ -190,8 +194,8 @@ sl-button.hamburgerMenuIcon::part(base) {
   right: 0;
   top: 50%;
   z-index: 3;
-  padding-right: 120px;
-  margin-top: -60px;
+  padding-right: 160px;
+  margin-top: -80px;
 }
 
 #videoWrapper {
@@ -544,7 +548,25 @@ sl-tab-group {
 
   #heroText {
     margin-top: -30px;
+    padding-right: 80px;
   }
+
+  
+  .inline img, .bikeIcon {
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+  }
+
+  article h2 {
+    margin-right: 5px;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+  
 
 }
 
@@ -598,13 +620,6 @@ sl-tab-group {
 
   .right {
     text-align: center;
-  }
-
-  /* Make Fullpage JS arrows a bit smaller */
-  .fp-controlArrow.fp-prev,
-  .fp-controlArrow.fp-next {
-    width: 50px;
-    height: 100px;
   }
 
   .tabHeading {

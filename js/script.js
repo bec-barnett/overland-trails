@@ -45,6 +45,7 @@ function openNav() {
   }
   document.getElementById("openNavBtn").style.display = "none";
   document.getElementById("closeNavBtn").style.display = "inline";
+  document.getElementById("disclaimer").style.width = "80%";
 }
 
 /**
@@ -55,6 +56,7 @@ function closeNav() {
   document.getElementById("sideBar").style.width = "0";
   document.getElementById("closeNavBtn").style.display = "none";
   document.getElementById("openNavBtn").style.display = "inline";
+  document.getElementById("disclaimer").style.width = "0%";
 }
 
 
