@@ -28,6 +28,114 @@ const scroller = new LocomotiveScroll({
   smooth: true
 });
 
+
+/**
+ * Add support for the splide library
+ * */
+document.addEventListener('DOMContentLoaded', function () {
+  var splide = new Splide('.splide');
+  splide.mount();
+});
+
+
+/**
+ * Open a fullscreen dialog to make a picture larger
+ * Uses shoelace dialog component
+*/
+const dialog = document.querySelector('.dialog-width'); // The shoelace dialog component
+const dialogImage = document.getElementById('fullscreenPicture'); // the image tag within the dialog
+const description = document.getElementById('fullscreenPictureDescription'); // a paragraph used for placing image descriptions
+const slideshowImages = document.querySelectorAll(".slideshowImage"); // each of our slideshow images
+const header = document.getElementById('head'); // page header
+
+// No overlay if viewport is too small
+var size = window.matchMedia("(max-width: 1400px)");
+if (!size.matches) { // If page width is not less than 1400px
+
+  // loop through slide show images to add the event listener
+  for (var i = 0, len = slideshowImages.length; i < len; i += 1) {
+    let imageURL = slideshowImages[i].src; // the src of the current slideshow image
+    let imageDescription = slideshowImages[i].getAttribute('alt'); // the description of the current slideshow image
+    slideshowImages[i].addEventListener('click', () => { // when an image is clicked
+      dialog.show(); // make the dialog appear
+      header.style.display = 'none'; // hide the page header as it was blocking the dialog modal close buttons
+      dialogImage.src = imageURL; // set the dialog image src to our current image src
+      description.innerHTML = imageDescription;  // set the dialog description inner html to our img description
+    });
+  }
+}
+// Close button within shoelace dialog modal
+const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+closeButton.addEventListener('click', () => { // When dialog close button is clicked
+  dialog.hide(); // close the dialog
+  header.style.display = 'inline'; // Make our header reappear as we hid it when the dialog was opened
+});
+
+/**
+ * Add Event Listeners to Timeline Images
+ * When Images are clicked, the description text updates
+ * 
+ */
+// Descriptions for timeline images
+const mornTimelinePicDescriptions = [
+  "8AM: After breakfast take the easy way up the hill in air-conditioned comfort.",
+  "9AM: Enjoy the peacefulness that only the Tasmanian remote wilderness can offer. You'll feel miles away from civilisation.",
+  "10AM: Develop an appetite as you make your way cross-country on our unique private mountain biking tracks.",
+  "11AM: Pause and appreciate the view as we head further away from civilisation.",
+  "12PM: Keep an eye out for the local wildlife!"
+];
+const afternTimelinePicDescriptions = [
+  "1PM: Enjoy a lunchtime spread from some of Tasmania's finest producers. Sample some of Tasmania's famous cold-climate wines.",
+  "3PM: Marvel at the view and get ready for an epic downhill track back towards camp.",
+  "4PM: Enjoy an endless sunset that stretches on forever in the southern highlands.",
+  "5PM: Practice some technical skills around the camp feature ground. You'll put them to good use tomorrow.",
+  "6PM: Arrive to find your cozy camp setup and waiting for you. A good nights rest awaits."
+];
+const morningTimelinePictures = document.querySelectorAll(".morningImage"); // all morning timeline images
+const afternoonTimelinePictures = document.querySelectorAll(".afternoonImage"); // all afternoon timeline images
+const morningTimelineDescription = document.getElementById('morningParagraph'); // paragraph for morning timeline descriptions
+const afternoonTimelineDescription = document.getElementById('afternoonParagraph'); // paragraph for afternoon timeline descriptions
+
+// Loop through the morning timeline pictures to add event listeners for when an image is clicked
+for (var i = 0, len = morningTimelinePictures.length; i < len; i += 1) {
+  let desc = mornTimelinePicDescriptions[i]; // grab the image description
+  morningTimelinePictures[i].addEventListener('click', () => {
+    morningTimelineDescription.innerHTML = desc; // change the morning timeline description
+  });
+}
+// Loop through the afternoon timeline pictures to add event listeners for when an image is clicked
+for (var i = 0, len = afternoonTimelinePictures.length; i < len; i += 1) {
+  let desc = afternTimelinePicDescriptions[i]; // grab the image description
+  afternoonTimelinePictures[i].addEventListener('click', () => {
+    afternoonTimelineDescription.innerHTML = desc; // change the afternoon timeline description
+  });
+}
+
+/**
+ * Contact Form
+ * */
+const form = document.querySelector('#contactForm');
+form.addEventListener('submit', event => {
+  event.preventDefault(); //  stop form from trying to submit to a blank target
+  form.innerHTML = '<p>Thanks for your message!<br><br>We will be in contact shortly.</p>'; // thank the user for their message
+});
+
+/** Full screen Video 
+ * ref: W3 Schools. How To Create a Fullscreen Video
+ * src: https://www.w3schools.com/howto/howto_css_fullscreen_video.asp
+*/
+
+// Get the video
+var video = document.getElementById("heroVideo");
+var videoWrapper = document.getElementById('videoWrapper');
+video.addEventListener('ended', videoFinished, false);
+
+// Get the pause buttons
+var navPauseBtn = document.getElementById("navPauseBtn");
+var btmPauseBtn = document.getElementById("btmPauseBtn");
+navPauseBtn.addEventListener('click', restartVideo);
+btmPauseBtn.addEventListener('click', pauseStartVideo);
+
 /**
  * Function to open the sideNav
  * Source: https://www.w3schools.com/howto/howto_js_sidenav.asp
@@ -59,22 +167,6 @@ function closeNav() {
   document.getElementById("disclaimer").style.width = "0%";
 }
 
-
-/** Full screen Video 
- * ref: W3 Schools. How To Create a Fullscreen Video
- * src: https://www.w3schools.com/howto/howto_css_fullscreen_video.asp
-*/
-
-// Get the video
-var video = document.getElementById("heroVideo");
-var videoWrapper = document.getElementById('videoWrapper');
-video.addEventListener('ended', videoFinished, false);
-
-// Get the pause buttons
-var navPauseBtn = document.getElementById("navPauseBtn");
-var btmPauseBtn = document.getElementById("btmPauseBtn");
-navPauseBtn.addEventListener('click', restartVideo);
-btmPauseBtn.addEventListener('click', pauseStartVideo);
 
 // Pause and play the video, and change the button text
 function pauseStartVideo() {
@@ -177,93 +269,3 @@ function redirectHome() {
   window.location.href = "";
 }
 
-/**
- * Add support for the splide library
- * */
-document.addEventListener('DOMContentLoaded', function () {
-  var splide = new Splide('.splide');
-  splide.mount();
-});
-
-
-/**
- * Open a fullscreen dialog to make a picture larger
- * Uses shoelace dialog component
-*/
-const dialog = document.querySelector('.dialog-width'); // The shoelace dialog component
-const dialogImage = document.getElementById('fullscreenPicture'); // the image tag within the dialog
-const description = document.getElementById('fullscreenPictureDescription'); // a paragraph used for placing image descriptions
-const slideshowImages = document.querySelectorAll(".slideshowImage"); // each of our slideshow images
-const header = document.getElementById('head'); // page header
-
-// No overlay if viewport is too small
-var size = window.matchMedia("(max-width: 1400px)");
-if (!size.matches) { // If page width is not less than 1400px
-
-  // loop through slide show images to add the event listener
-  for (var i = 0, len = slideshowImages.length; i < len; i += 1) {
-    let imageURL = slideshowImages[i].src; // the src of the current slideshow image
-    let imageDescription = slideshowImages[i].getAttribute('alt'); // the description of the current slideshow image
-    slideshowImages[i].addEventListener('click', () => { // when an image is clicked
-      dialog.show(); // make the dialog appear
-      header.style.display = 'none'; // hide the page header as it was blocking the dialog modal close buttons
-      dialogImage.src = imageURL; // set the dialog image src to our current image src
-      description.innerHTML = imageDescription;  // set the dialog description inner html to our img description
-    });
-  }
-}
-// Close button within shoelace dialog modal
-const closeButton = dialog.querySelector('sl-button[slot="footer"]');
-closeButton.addEventListener('click', () => { // When dialog close button is clicked
-  dialog.hide(); // close the dialog
-  header.style.display = 'inline'; // Make our header reappear as we hid it when the dialog was opened
-});
-
-/**
- * Add Event Listeners to Timeline Images
- * When Images are clicked, the description text updates
- * 
- */
-// Descriptions for timeline images
-const mornTimelinePicDescriptions = [
-  "8AM: After breakfast take the easy way up the hill in air-conditioned comfort.",
-  "9AM: Enjoy the peacefulness that only the Tasmanian remote wilderness can offer. You'll feel miles away from civilisation.",
-  "10AM: Develop an appetite as you make your way cross-country on our unique private mountain biking tracks.",
-  "11AM: Pause and appreciate the view as we head further away from civilisation.",
-  "12PM: Keep an eye out for the local wildlife!"
-];
-const afternTimelinePicDescriptions = [
-  "1PM: Enjoy a lunchtime spread from some of Tasmania's finest producers. Sample some of Tasmania's famous cold-climate wines.",
-  "3PM: Marvel at the view and get ready for an epic downhill track back towards camp.",
-  "4PM: Enjoy an endless sunset that stretches on forever in the southern highlands.",
-  "5PM: Practice some technical skills around the camp feature ground. You'll put them to good use tomorrow.",
-  "6PM: Arrive to find your cozy camp setup and waiting for you. A good nights rest awaits."
-];
-const morningTimelinePictures = document.querySelectorAll(".morningImage"); // all morning timeline images
-const afternoonTimelinePictures = document.querySelectorAll(".afternoonImage"); // all afternoon timeline images
-const morningTimelineDescription = document.getElementById('morningParagraph'); // paragraph for morning timeline descriptions
-const afternoonTimelineDescription = document.getElementById('afternoonParagraph'); // paragraph for afternoon timeline descriptions
-
-// Loop through the morning timeline pictures to add event listeners for when an image is clicked
-for (var i = 0, len = morningTimelinePictures.length; i < len; i += 1) {
-  let desc = mornTimelinePicDescriptions[i]; // grab the image description
-  morningTimelinePictures[i].addEventListener('click', () => {
-    morningTimelineDescription.innerHTML = desc; // change the morning timeline description
-  });
-}
-// Loop through the afternoon timeline pictures to add event listeners for when an image is clicked
-for (var i = 0, len = afternoonTimelinePictures.length; i < len; i += 1) {
-  let desc = afternTimelinePicDescriptions[i]; // grab the image description
-  afternoonTimelinePictures[i].addEventListener('click', () => {
-    afternoonTimelineDescription.innerHTML = desc; // change the afternoon timeline description
-  });
-}
-
-/**
- * Contact Form
- * */
-const form = document.querySelector('#contactForm');
-form.addEventListener('submit', event => {
-  event.preventDefault(); //  stop form from trying to submit to a blank target
-  form.innerHTML = '<p>Thanks for your message!<br><br>We will be in contact shortly.</p>'; // thank the user for their message
-});
